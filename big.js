@@ -23,6 +23,9 @@ window.onload = function() {
     for (i = 0; i < s.length; i++) s[i].style.display = 'none';
     e.style.display = 'inline';
     e.focus();
+    if (notes.length && typeof console === 'object') {
+      console.log('------------------------');
+    }
     for (i = 0; typeof console === 'object' && i < notes.length; i++) console.log('%c%s: %s', 'padding:5px;font-family:serif;font-size:18px;line-height:150%;', n, notes[i].innerHTML.trim());
     if (e.firstChild && e.firstChild.nodeName === 'IMG') {
       document.body.style.backgroundImage = 'url("' + e.firstChild.src + '")';
@@ -36,7 +39,7 @@ window.onload = function() {
     if (t > 0) ti = window.setTimeout(fwd, t * 1000);
     resize();
     if (window.location.hash !== n) window.location.hash = n;
-    document.title = e.textContent || e.innerText;
+    // document.title = e.textContent || e.innerText;
   }
   document.onclick = function() { go(++big.current % s.length); };
   function fwd() { go(Math.min(s.length - 1, ++big.current)); }

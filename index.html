@@ -1,185 +1,230 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Big: Presentations for Busy Messy Hackers</title>
-    <meta charset='utf-8'>
-    <meta property="og:title" content="Big"/>
-    <meta property="og:description" content="Presentations for Busy Messy Hackers"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <style>
-body {
-    color:#222;
-    max-width:640px;
-    margin:20px auto 50px auto;
-    font:normal 14px/25px 'Helvetica Neue', sans-serif;
-}
-h1 { font-size:140px; line-height:40px;margin-top:140px; }
-h1, h2 {
-    text-align:center;
-}
-.head {
-    color:#fff;
-    background:#000;
-    padding:10px;
-    text-align:right;
-    border:1px solid #000;
-}
-.content {
-    margin:40px 50px 0 50px;
-}
-.buttons {
-    text-align:center;
-    padding:20px 0 20px 0;
-}
-.button {
-    color:#fff;
-    background:#56a;
-    padding:10px 20px;
-    font-size:18px;
-    border-radius:3px;
-    text-decoration:none;
-    margin:0 10px;
-    border-bottom:1px solid #AEB7DD;
-    border-right:1px solid #AEB7DD;
-}
-.button:first-child {
-    background:#586;
-    border-bottom:1px solid #A8D8B3;
-    border-right:1px solid #A8D8B3;
-}
-a {
-    color:blue;
-    text-decoration:none;
-}
-a:hover { text-decoration:underline; }
-ul { list-style-type:none; margin:0; padding:0;}
-li { width:50%;float:left;box-sizing:border-box;border:5px solid #fff; }
-li a {
-    color: #000;
-    display:block;
-    text-decoration:none;
-    padding:15px;
-    background:#fff;
-    transition:background 100ms linear;
-    text-align:center;
-    border-radius:2px;
-    background:#efefef;
-}
-li a:hover { background:#558866; color:#fff; text-decoration:none; }
-.clearfix:after {
-  content:'.';
-  display:block;
-  height:0;
-  clear:both;
-  visibility:hidden;
-  }
+<!DOCTYPE html><html><head><title>Just Right: Goldilocks and CMS theme systems</title><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+<link href='big.css' rel='stylesheet' type='text/css' />
+<style>
+  em { color: hotpink; }
+  .woah { background: #fff; color: #000; }
+  .woah em { color: deeppink; }
+</style>
+<script src='big.js'></script></head><body>
+  <div>Just Right: Goldilocks and CMS theme systems</div>
+  <div><a href="https://bit.ly/goldfu2016">bit.ly/goldfu2016</a></div>
+  <div>
+      <span class="nobreak">Lauri Eskola</span>
+      lauriii
+      <notes>Drupal 8 theme system co-maintainer</notes>
+      <notes>Drupal Craftsman @ Druid</notes>
+  </div>
+  <div>
+      <span class="nobreak">Scott Reeves</span>
+      Cottser
+      <notes>Drupal 8 theme system co-maintainer</notes>
+      <notes>Stable theme maintainer</notes>
+      <notes>Provisional D8 core committer</notes>
+      <notes>Team Lead @ Digital Echidna</notes>
+  </div>
 
-.clearfix { display:inline-block; }
+  <div>
+    Content Management System
+    <notes>Scott - CMS</notes>
+    <notes>(from Wikipedia) …is a computer application that supports the creation and modification of digital content using a common user interface and thus usually supporting multiple users working in a collaborative environment.</notes>
+    <notes>By their nature, content management systems support the separation of content and presentation.</notes>
+    <notes>Some examples: WordPress, Joomla, Drupal</notes>
+    <notes>Show of hands - how many people work with CMSes? (Estimate and say out loud for the recording)</notes>
+    <notes>How many people work with Drupal?</notes>
+  </div>
 
-pre {
-    padding:10px;
-    background:#e0efe0;
-}
-.gh {
-    display:block;
-    text-align:right;
-}
-    </style>
-</head>
-<body>
-<a class='gh' href='https://github.com/tmcw/big'>(fork || star) on github</a>
-<div class='head'>
-    <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=tmcw&repo=big&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
-    <h1>Big</h1>
-    <div class='buttons'>
-        <a class='button' href='https://github.com/tmcw/big/archive/gh-pages.zip'>Download</a>
-        <a class='button' href='./demo.html'>Demo</a>
+  <div>
+    Theme System
+    <notes>Lauri - Theme system</notes>
+    <notes>Theme system allows for flexible markup output</notes>
+    <notes>Briefly explain what modules are in Drupal.</notes>
+    <notes>Modules can provide markup and overrides - for example contextual links in Drupal (advance to next slide)</notes>
+    <notes>Themes can be generic or application specific, and they also have inheritance (tree structure)</notes>
+    <notes>A site can have multiple themes, the simplest example would be admin theme and default user-facing theme. But you could also have more complex rules than this.</notes>
+  </div>
+
+  <div>
+    <img src="assets/contextual-links.png" alt="Screenshot of Drupal contextual links">
+  </div>
+
+  <div>
+    <em>Frameworks</em> have
+    more limited UIs
+    <notes>Scott - Frameworks</notes>
+    <notes>Lower complexity in the theme system, often no theme system, you need to write code to do a lot of things instead of installing other people's code (in other words installing modules)</notes>
+    <notes>Example: Symfony (PHP framework) people may think Drupal 8 is using Twig wrong but they are not using Twig in a CMS context so it’s completely different. Twig is just a tool and the context in which it is used will change how it is used. We have to account for the site builder persona.</notes>
+    <notes>CMS often comes with preset templates and styling also.</notes>
+    <notes>The short version of this is in most cases we shouldn't be comparing CMSes to frameworks.</notes>
+  </div>
+
+  <div data-bodyclass='woah'>
+    <em>Personas</em>
+    <notes>Lauri - Personas</notes>
+    <notes>These are the developer personas that interact with the theme system.</notes>
+    <notes>Accommodating the different personas (allowing both UI and code for many tasks) makes things more complex.</notes>
+    <notes>Certain decisions are made with these personas in mind and they may prioritize one or more over the others.</notes>
+    <notes>Different CMSes prioritize these in a different way (more on that later)</notes>
+  </div>
+    <div>
+      Frontend developer / themer
+      <notes>Themer is a Drupalism</notes>
+      <notes>Extended role - in Drupal 7 and earlier you would work a lot more with PHP</notes>
+      <notes>Theme functions - gone in Drupal 8 but part of the daily life of themers working with Drupal 7 and earlier.</notes>
+      <notes>Scares the hell out of designers.</notes>
     </div>
-    <h2>Presentations for Busy Messy Hackers</h2>
-</div>
+    <div>
+      Backend developer
+      <notes>Interact with the theme system, sometimes in ways that are bad for themers, for example overriding templates in a hacky way</notes>
+    </div>
+    <div>
+      Site builder
+      <notes>Has power from the UI to change things, and even can sometimes manipulate markup from the UI like in Views UI for example where they can add classes to the markup.</notes>
+    </div>
 
-<div class='content'>
-    <p>
-    Big is a minimal presentation system with a simple rule: the text on every
-    slide is embiggened until it fills your screen.
-    It works pretty okay with focused presentations and plenty of narration,
-    and it will make long bullet-lists look terrible.
-    </p>
-    <p>
-    You create presentations with big by downloading it and editing simple
-    HTML: <code>div</code> elements become slides. You style your presentations
-    with CSS, just like web pages.
-    </p>
-    <p>Then you can either post your slides
-    to GitHub to share with the world, or boot up a local development
-    server to conference-wifi-proof them.
-    </p>
-</div>
+  <div data-bodyclass='woah'>
+    <em><a href="https://wiki.mozilla.org/DeveloperExperience/Personas">Mozilla personas</a></em>
+    <notes>Scott - Mozilla Personas</notes>
+    <notes>Mozilla has personas that are documented with names and description of what they would do</notes>
+  </div>
+  <div>George (designer)<notes>George (designer)</notes></div>
+  <div>Denise (lightweight JavaScripter)<notes>Denise (lightweight JavaScripter)</notes></div>
+  <div>Emily (corporate web app developer)<notes>Emily (corporate web app developer)</notes></div>
+  <div>Alexander (Firefox add-on developer)<notes>Alexander (Firefox add-on developer)</notes><notes>We thought this was interesting because it seemed similar to our module developer</notes></div>
+  <div data-bodyclass='woah'>
+    <em>Priorities</em>
+    <notes>Scott - Priorities</notes>
+    <notes>Different CMSes prioritize the personas differently</notes>
+    <notes>Flexibility and how usable is it?</notes>
+    <notes>Often the prioritization is not explicit and sometimes whoever is driving the change determines the priorities, often with themselves in the #1 spot.</notes>
+  </div>
+    <div>
+      <img src="assets/wp-rules.jpg" alt="Screenshot of WordPress with theme that looks like Bartik">
+      <notes>We looked at some other CMSes to try to determine a rough priority. This is not scientific.</notes>
+    </div>
+    <div>
+      <em>Drupal</em><br>
+      Site builder<br>
+      Backend<br>
+      Themer
+      <notes>We have a mission but not personas, we would like to more fine-grained personas defined.</notes>
+      <notes>It seems very difficult to fulfill all these types of users and it often ends up like a 3-way tug of war.</notes>
+      <notes>If anyone saw the Driesnote from New Orleans these are basically the priorities he presented as well, but we chose these priorities before that.</notes>
+      <notes>The template often prints everything defined from the UI (for example a generic content variable) and if you're not careful changing that can break the UI. The backend developer also has a lot of power to step in and change things.</notes>
+      <notes>site builder, backend, themer</notes>
+    </div>
+    <div>
+      <em>WordPress</em><br>
+      Themer<br>
+      Site builder<br>
+      Backend
+      <notes>Does it have personas?</notes>
+      <notes>Theming is not as usable but is very flexible. The site builder also can do a lot from the UI but in general WordPress is not targeted at backend developers.</notes>
+      <notes>themer, site builder, backend</notes>
+    </div>
+    <div>
+      <em>Joomla</em><br>
+      Site builder<br>
+      Themer<br>
+      Backend
+      <notes>At least has some rough personas</notes>
+      <notes>We looked at Joomla and…</notes>
+      <notes>it has a powerful UI which in some ways looks similar to Drupal, they call their blocks modules and you can actually manipulate the classes that go on those from the UI.</notes>
+      <notes>They hardcode things in templates more often so it gives more power to the themers over the backend developer.</notes>
+      <notes>site builder, themer, backend</notes>
+    </div>
+    <div>
+      <em>Concrete5</em><br>
+      Site builder<br>
+      Backend<br>
+      Themer
+      <notes>Does it have personas?</notes>
+      <notes>We looked at Concrete5 and…</notes>
+      <notes>it also has a powerful UI, and has many APIs and helpers that would make a backend developer feel at home. The theming experience in some ways looks similar to Drupal though.</notes>
+      <notes>site builder, backend, themer</notes>
+      <notes>We landed on the same prioritization as Drupal. Should we be looking closer at Concrete5 to see if we can learn anything or should we be looking at systems that seem to be more radically different?</notes>
+    </div>
 
-<div class='content'>
-    <h2>Quick Start</h2>
-    <pre>curl -L http://bit.ly/big-quick &gt; index.html
-python -m SimpleHTTPServer</pre>
-    <p>(then open <a href='http://localhost:8000/'>localhost:8000</a>)</p>
-</div>
+  <div data-bodyclass='woah'>
+    <em>Current situation</em>
+  </div>
 
-<div class='content'>
-    <h2>Examples</h2>
-    <ul class='clearfix'>
-        <li><a href="http://exposedata.com/talk/d3-geo/#0">d3-geo</a>
-        <li><a href="http://bdon.org/talk-2013-1-29.html#0">THREE.js + geo</a>
-        <li><a href="http://macwright.org/presentations/beyond/">FOSS4G: Beyond</a></li>
-        <li><a href="http://macwright.org/presentations/projections/#0">Project It Yourself</a></li>
-        <li><a href="http://macwright.org/presentations/carto/">Carto</a></li>
-        <li><a href="http://maxogden.github.com/slides/empirejs/index.html#0">javascript for cats</a>
-        <li><a href="http://macwright.org/presentations/wherecampboston/">WhereCamp Boston</a>
-        <li><a href="http://macwright.org/presentations/foss4g/1.html">foss4g</a></li>
-        <li><a href="http://isaacjg.github.io/intro_to_python/python_presentation/python_presentation.html#0">python</a></li>
-    </ul>
-</div>
+  <div>
+    <em>Problems</em>
+    <notes>Lauri - Problems</notes>
+    <notes>On top of the clash that happens with these different personas,</notes>
+    <notes>the theme system has some other things to deal with.</notes>
+  </div>
+    <div>
+      Security
+      <notes>Autoescape</notes>
+      <notes>User generated content</notes>
+    </div>
+    <div>
+      Backwards compatibility
+      <notes>Don't break people's sites</notes>
+      <notes>Still be able to evolve</notes>
+      <notes>Stable theme is a hacky way to do this in D8 and adds another layer of complexity</notes>
+    </div>
+    <div>
+      UI/code mismatch
+      <notes>Set a field order in manage display</notes>
+      <notes>Themer overrides the template and moves the fields around</notes>
+      <notes>This breaks the UI. In the end themers have the final say for the most part.</notes>
+    </div>
+    <div>
+      Complexity
+      <notes>All these and related make the theme system complex and hard to evolve.</notes>
+    </div>
 
-<div class='content'>
-    <h2>Plugins and Riffs</h2>
-    <p>
-    Don't like typing HTML? You can use <a href='http://macwright.org/biggie'>biggie</a>
-    if you want and type Markdown instead. <a href='https://github.com/harperreed/bigpy'>bigpy</a> does
-    it in Python.
-    </p>
-    <p>
-    Don't want to spend time designing stuff? <a href='https://github.com/tmcw/big-themes'>big-themes</a>
-    has some precooked styles.
-    </p>
-    <p>
-    Want something else? Check out <a href='https://github.com/jed/weenote'>Weenote</a>,
-    <a href='http://github.com/mbostock/stack'>stack</a>, and <a href='https://github.com/schacon/showoff'>showoff</a>.
-    There sure are options nowadays.
-    </p>
-</div>
+  <div>
+    <em>Examples</em>
+  </div>
 
-<div class='content'>
-    <h2>Nerd Stuff</h2>
-    <p>
-    Big is 1.1KB and 46 lines long at last count. It's written in vanilla JavaScript
-    with no frameworks and no hijinks. It supports touch and permalinks
-    to individual slide pages. It's licensed PD and is ready for you to hack
-    it into something beautiful or monstrous.
-    </p>
-    <p>
-        Big is awesome because awesome folks have helped out, and you can too:
-        <a href='https://github.com/tmcw/big'>fork big on GitHub!</a>
-    </p>
-</div>
+  <div>
+    <em>Logo</em> is the simplest example
+    <notes>Lauri - Logo</notes>
+    <notes>In Drupal you can change the logo by using the theme settings in the CMS UI</notes>
+    <notes>You could also hardcode the logo into the page template</notes>
+    <notes>When you hardcode the logo markup you break the UI and potentially break translation/localization</notes>
+    <notes>WordPress doesn't have logo functionality at all</notes>
+  </div>
+  <div>
+    <em>Forms</em> are horrible to theme
+    <notes>Lauri - Forms</notes>
+    <notes>Drupal forms are good for backend and site builder but themers have very little control and can't create forms from a template</notes>
+    <notes>Some systems give you a bit more control over the forms for example Joomla and Concrete5. Joomla hardcodes all the form markup, Concrete5 has a form builder PHP class.</notes>
+    <notes>Forms were an early attempt in Drupal to build a component system but they are not very themer friendly.</notes>
+  </div>
 
-<script type="text/javascript">
-  var _gauges = _gauges || [];
-  (function() {
-    var t   = document.createElement('script');
-    t.type  = 'text/javascript';
-    t.async = true;
-    t.id    = 'gauges-tracker';
-    t.setAttribute('data-site-id', '4e36eb1ef5a1f53d6f000001');
-    t.src = '//secure.gaug.es/track.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(t, s);
-  })();
-</script>
+  <div data-bodyclass='woah'>
+    <em>Component-based theme system</em>
+    <notes>Scott - Components</notes>
+    <notes>To give a bit more context to this discussion and present a possible solution we'd like to briefly talk about the idea of a component-based theme system.</notes>
+    <notes>A group got together earlier this month at DrupalCon New Orleans to discuss this idea.</notes>
+  </div>
+
+  <div>
+    Components should not be the same as data structures
+    <notes>Drupal has templates for nodes, fields, users, and so on. The theming experience is very tied to the data structures. This means simple things are hard and it's ultimately less flexible.</notes>
+    <notes>(optional) The theme system is basically decorating the data structures that have been built.</notes>
+  </div>
+
+  <div>
+    Don't break the UI
+    <notes>Because we are talking about a CMS we still need to preserve functionality in the user interface and allow the site builder to do many tasks.</notes>
+    <notes>We might need to make a trade-off in certain situations by disabling the UI in a smart way when the themer has overridden something.</notes>
+  </div>
+
+  <div>
+    Discuss
+    <notes>Have you seen personas put to good use in other projects?</notes>
+    <notes>Which persona(s) to prioritize (always the same?)</notes>
+    <notes>Who decides the priorities and when?</notes>
+    <notes>Should we prioritize at all?</notes>
+    <notes>Is making everyone happy possible, or do we need to compromise?</notes>
+    <notes>Have you seen any examples of a component-based architecture in other systems that we should be looking at?</notes>
+  </div>
+
+  <div>Sprints Sunday</div>
+</body>
+</html>
